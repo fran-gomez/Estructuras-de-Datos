@@ -1,0 +1,15 @@
+package tp4;
+
+public class ListaReversible<E> implements ListaInversible<E> extends ListaDoblementeEnlazada<E> {
+
+    public void invertir() {
+
+        PositionList<E> aux = new ListaArreglo<E>(size);
+
+        while (!this.isEmpty())
+            aux.addFirst(this.remove(this.first()));
+
+        while (!aux.isEmpty())
+            this.addLast(aux.remove(aux.first()));
+    }
+}
